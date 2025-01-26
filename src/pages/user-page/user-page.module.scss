@@ -1,0 +1,10 @@
+@use "@styles/colors";
+
+.profile__wrapper {
+  border: 2px solid colors.$gray_light;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}

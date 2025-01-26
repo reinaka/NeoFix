@@ -1,0 +1,61 @@
+@import-normalize;
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.ant-picker-dropdown .ant-picker-panel-container .ant-picker-panels {  
+  display: inline-flex;
+  animation: none;
+  flex-wrap: nowrap;
+  direction: ltr;
+  @media (max-width: 768px) {
+    display: inline-grid;
+  }
+};
