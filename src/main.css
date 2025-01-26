@@ -50,7 +50,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.ant-picker-dropdown .ant-picker-panel-container .ant-picker-panels {  
+.ant-picker-dropdown .ant-picker-panel-container .ant-picker-panels {
   display: inline-flex;
   animation: none;
   flex-wrap: nowrap;
@@ -58,4 +58,4 @@ input[type="number"] {
   @media (max-width: 768px) {
     display: inline-grid;
   }
-};
+}

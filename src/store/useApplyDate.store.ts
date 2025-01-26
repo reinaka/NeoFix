@@ -17,7 +17,6 @@ const applyDateStore = create<applyDateStoreT>(set => ({
   startDate: undefined,
   finishDate: undefined,
 
-
   setDates: (start: string, finish: string) => {
     set(state => {
       localStorage.setItem("startApplyDate", start);
@@ -25,7 +24,7 @@ const applyDateStore = create<applyDateStoreT>(set => ({
       return {
         ...state,
         startDate: start,
-        finishDate: finish
+        finishDate: finish,
       };
     });
   },
@@ -34,18 +33,18 @@ const applyDateStore = create<applyDateStoreT>(set => ({
     set({ loading: true });
     try {
       const response = await axios.post("", {
-        "startDate": start,
-        "endDate": finish
+        startDate: start,
+        endDate: finish,
       });
       if (response.status === 200) {
         localStorage.setItem("startApplyDate", start);
         localStorage.setItem("finishApplyDate", finish);
         set(state => {
-            return {
-              ...state,
-              startDate: start,
-              finishDate: finish
-            };
+          return {
+            ...state,
+            startDate: start,
+            finishDate: finish,
+          };
         });
       }
     } catch {
@@ -53,7 +52,7 @@ const applyDateStore = create<applyDateStoreT>(set => ({
     } finally {
       set({ loading: false });
     }
-  }
+  },
 }));
 
 export const useApplyDateStore = createSelectors(applyDateStore);

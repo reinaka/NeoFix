@@ -16,13 +16,12 @@ const welcomeMessageStore = create<welcomeMessageStoreT>(set => ({
   error: false,
   welcomeMessage: undefined,
 
-
   setWelcomeMessage: (message: string) => {
     set(state => {
       localStorage.setItem("welcomeMessage", message);
       return {
         ...state,
-        welcomeMessage: message
+        welcomeMessage: message,
       };
     });
   },
@@ -31,15 +30,15 @@ const welcomeMessageStore = create<welcomeMessageStoreT>(set => ({
     set({ loading: true });
     try {
       const response = await axios.post("", {
-        "message": message,
+        message: message,
       });
       if (response.status === 200) {
         localStorage.setItem("welcomeMessage", message);
         set(state => {
-            return {
-              ...state,
-              welcomeMessage: message
-            };
+          return {
+            ...state,
+            welcomeMessage: message,
+          };
         });
       }
     } catch {
@@ -47,7 +46,7 @@ const welcomeMessageStore = create<welcomeMessageStoreT>(set => ({
     } finally {
       set({ loading: false });
     }
-  }
+  },
 }));
 
 export const useWelcomeMessageStore = createSelectors(welcomeMessageStore);

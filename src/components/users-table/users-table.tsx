@@ -98,8 +98,8 @@ export const UsersTable = () => {
       loading={!usersData}
       showSorterTooltip={false}
       size="large"
-      style={{maxWidth: "100%", width: "100%"}}
-      scroll={{x: true}}
+      style={{ maxWidth: "100%", width: "100%" }}
+      scroll={{ x: true }}
     />
   );
 };

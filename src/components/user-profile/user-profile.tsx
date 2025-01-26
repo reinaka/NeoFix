@@ -8,12 +8,12 @@ const getContent = (user: UserT) => (
   <div className={styles.profile__wrapper}>
     <h1>{`${user.lastName} ${user.firstName}`}</h1>
     <div className={styles.data__wrapper}>
-        <UserItem title="Статус" content={user.statusId} />
-        <UserItem title="Направление" content={user.directionId} />
-        <UserItem title="Город" content={user.city} />
-        <UserItem title="Телефон" content={user.phone} />
-        <UserItem title="Email" content={user.email} />
-        <UserItem title="Telegram" content={user.telegram} />
+      <UserItem title="Статус" content={user.statusId} />
+      <UserItem title="Направление" content={user.directionId} />
+      <UserItem title="Город" content={user.city} />
+      <UserItem title="Телефон" content={user.phone} />
+      <UserItem title="Email" content={user.email} />
+      <UserItem title="Telegram" content={user.telegram} />
     </div>
   </div>
 );

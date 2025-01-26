@@ -53,7 +53,7 @@ export const OpenProfilePopover = ({
                   navigate(`/users/${record.id}`);
                 }}
               >
-                  Перейти в профиль
+                Перейти в профиль
               </Button>,
             ]}
           >
