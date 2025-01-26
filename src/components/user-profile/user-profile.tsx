@@ -8,7 +8,7 @@ const getContent = (user: UserT) => (
   <div className={styles.profile__wrapper}>
     <h1>{`${user.lastName} ${user.firstName}`}</h1>
     <div className={styles.data__wrapper}>
-      <UserItem title="Статус" content={user.statusId} />
+      <UserItem title="Статус" content={<Badge key={user.statusId} color={getColor(user.statusId)} text={user.statusId} />} />
       <UserItem title="Направление" content={user.directionId} />
       <UserItem title="Город" content={user.city} />
       <UserItem title="Телефон" content={user.phone} />

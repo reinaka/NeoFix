@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { useWelcomeMessageStore } from "@store/useWelcomeMessage.store";
+import styles from "./welcome-message-from.module.scss";
 
 export const WelcomeMessageForm = ({
   label,
@@ -9,6 +10,7 @@ export const WelcomeMessageForm = ({
   label?: string;
   name: string;
 }) => {
+  const welcomeMessage = useWelcomeMessageStore.use.welcomeMessage();
   const [form] = Form.useForm();
   const [input, setInput] = useState<string | undefined>(undefined);
 
@@ -25,6 +27,7 @@ export const WelcomeMessageForm = ({
       <Form.Item label={label} name={name}>
         <Input onChange={e => setInput(e.target.value)} />
       </Form.Item>
+      {welcomeMessage !== undefined && <p className={styles.message}><span>Сохраненное сообщение: </span>{welcomeMessage}</p>}
       <Form.Item>
         <Button
           type="primary"
@@ -32,7 +35,7 @@ export const WelcomeMessageForm = ({
           htmlType="submit"
           onClick={() => handleSubmit(input)}
         >
-          Submit
+          Cохранить
         </Button>
       </Form.Item>
     </Form>
